@@ -1,0 +1,32 @@
+class Assets {
+  // Base paths
+  static const _svg = 'assets/svgs/';
+  static const _img = 'assets/images/';
+
+  // SVGs
+  static const android = '${_svg}android.svg';
+  static const apple = '${_svg}apple.svg';
+  static const web = '${_svg}webdevelopment.svg';
+  static const uiux = '${_svg}uiux.svg';
+  static const twitter = '${_svg}twitter.svg';
+  static const linkedin = '${_svg}linkedin.svg';
+  static const github = '${_svg}github.svg';
+  static const flutter = '${_svg}flutter.svg';
+  static const firebase = '${_svg}firebase.svg';
+  static const dart = '${_svg}dart.svg';
+  static const html = '${_svg}html.svg';
+  static const css = '${_svg}css.svg';
+  static const javascript = '${_svg}javascript.svg';
+  static const figma = '${_svg}figma.svg';
+  static const vscode = '${_svg}vscode.svg';
+  static const andoridStudio = '${_svg}andorid_studio.svg';
+  static const nodejs = '${_svg}node_js.svg';
+  static const supabase = '${_svg}supabase.svg';
+  static const git = '${_svg}git.svg';
+  static const graphql = "${_svg}graphql.svg";
+  static const postman = "${_svg}postman.svg";
+  static const closeX = "${_svg}close_x.svg";
+  static const drawerMenu = "${_svg}drawer_menu.svg";
+  static const arrowUpRight = "${_svg}arrow_up_right.svg";
+  static const whatsapp = "${_svg}whatsapp.svg";
+}
