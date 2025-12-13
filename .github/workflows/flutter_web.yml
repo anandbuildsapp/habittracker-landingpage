@@ -1,37 +1,36 @@
-# name: Portfolio Website Deployment
+name: Build & Deploy Flutter Web (Vercel)
 
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   build-deploy:
-#     runs-on: ubuntu-latest
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v3
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
 
-#       - name: Setup Flutter
-#         uses: subosito/flutter-action@v2
-#         with:
-#           flutter-version: '3.35.1'
-#           channel: 'stable'
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
 
-#       - name: Install dependencies
-#         run: flutter pub get
+      - name: Install dependencies
+        run: flutter pub get
 
-#       - name: Build Flutter Web
-#         run: flutter build web --release --base-href /portfolio-flutter/
+      - name: Build Flutter Web
+        run: flutter build web --release
 
-#       - name: Deploy to GitHub Pages
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: build/web
-#           publish_branch: portfolio
-#           force_orphan: true
-#           user_name: github-actions[bot]
-#           user_email: github-actions[bot]@users.noreply.github.com
-#           commit_message: "Deploy portfolio website"
+      - name: Deploy build to deploy-web branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/web
+          publish_branch: deploy-web
+          force_orphan: true
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: "Deploy web build"
