@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <!-- Primary SEO -->
+  <title>Habit Tracker - Build Better Habits Daily</title>
+  <meta name="description"
+    content="A simple habit tracker app focused on consistency, not streak pressure. Build better habits with a clean, minimal experience.">
+  <meta name="keywords"
+    content="habit tracker, daily habits, build habits, productivity app, habit tracking app, self improvement, habitbud">
+  <meta name="author" content="Anand A J">
+  <meta name="robots" content="index, follow">
+
+  <!-- Mobile / PWA -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Habit Tracker">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #000000;
+    }
+
+    /* Simple white circular loader */
+    .loader {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loader"></div>
+
+  <script src="flutter_bootstrap.js" async></script>
+
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      const loader = document.querySelector('.loader');
+      if (loader) {
+        loader.style.transition = 'opacity 0.4s ease';
+        loader.style.opacity = '0';
+        setTimeout(() => loader.remove(), 400);
+      }
+    });
+  </script>
+</body>
+</html>
