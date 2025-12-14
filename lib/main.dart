@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
       themeMode: ThemeMode.dark,
       darkTheme: buildDarkTheme(),
       debugShowCheckedModeBanner: false,
-         routerConfig: router, // ✅ simpler
+      routerConfig: router, 
       // routerDelegate: router.routerDelegate,
       // routeInformationParser: router.routeInformationParser,
       // routeInformationProvider: router.routeInformationProvider,
